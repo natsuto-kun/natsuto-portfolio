@@ -1,3 +1,9 @@
+const path = require('path');
+
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -34,5 +40,15 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-source-microcms',
+      options: {
+        apiKey: process.env.API_KEY,
+        serviceId: 'natsutoportfolio',
+        apis: [{
+          endpoint: 'top',
+        }],
+      },
+    },
   ],
 }
