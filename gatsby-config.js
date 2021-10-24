@@ -46,7 +46,7 @@ module.exports = {
         apiKey: process.env.API_KEY,
         serviceId: 'natsutoportfolio',
         apis: [{
-          endpoint: 'top',
+          endpoint: 'work',
         }],
       },
     },
